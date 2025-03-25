@@ -1,4 +1,3 @@
-// background.js
 chrome.runtime.onInstalled.addListener(() => {
     console.log("SABconnect++ Updated: Ready for use!");
 });

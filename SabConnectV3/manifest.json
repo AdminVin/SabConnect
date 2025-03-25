@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name": "SabConnectV3",
+    "version": "3.0.0",
+    "description": "SabConnect++ (V3) - Updated to Manifest V3",
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "host_permissions": [
+        "http://*/",
+        "https://*/"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*.newzbin.com/*", "https://*.newzbin.com/*",
+                "http://*.newzxxx.com/*", "https://*.newzxxx.com/*",
+                "http://*.tvnzb.com/*", "https://*.tvnzb.com/*",
+                "http://*.nzbmatrix.com/*", "https://*.nzbmatrix.com/*",
+                "http://*.nzbxxx.com/*", "https://*.nzbxxx.com/*",
+                "http://*.nzbs.org/*", "https://*.nzbs.org/*",
+                "http://*.nzbindex.com/*", "https://*.nzbindex.com/*"
+            ],
+			"js": [
+				"scripts/js/jquery-combined.js",
+				"scripts/js/common.js",
+				"scripts/js/jgcharts.pack.js",
+				"scripts/js/jquery-ui-1.7.2.sortable.min.js",
+				"scripts/js/sabconnect.js",
+				"scripts/js/settings.js",
+				"scripts/js/popup.js",
+			],
+            "css": ["site-css/nzbindex.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
